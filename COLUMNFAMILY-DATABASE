@@ -6,24 +6,24 @@ HBase is most effectively used to store non-relational data, accessed via the HB
 Apache Phoenix is commonly used as a SQL layer on top of HBase allowing you to use familiar SQL syntax to insert, delete, and query data stored in HBase.
 
 CREATE TABLE:
- To create a table,the following syntax is used:
+To create a table,the following syntax is used:
 
-      create ‘<table name>’,’<column family>’ 
+ create ‘<table name>’,’<column family>’ 
                     
 UPDATE TABLE:
- To update a data in a table,the following syntax is used:
+To update a data in a table,the following syntax is used:
 
-   put ‘table name’,’row ’,'Column family:column name',’new value’
+ put ‘table name’,’row ’,'Column family:column name',’new value’
                      
 INSERT TABLE:  
- To insert a data in a table,the following syntax is used:
+To insert a data in a table,the following syntax is used:
 
-   put ‘<table name>’,’row1’,’<columnfamily:colname>’,’<value>’
+ put ‘<table name>’,’row1’,’<columnfamily:colname>’,’<value>’
                      
 DELETE DATA:
-  To delete a particular data in a table,the following syntax is used: 
+To delete a particular data in a table,the following syntax is used: 
 
-   delete ‘<table name>’, ‘<row>’, ‘<column name >’, ‘<time stamp>’
+ delete ‘<table name>’, ‘<row>’, ‘<column name >’, ‘<time stamp>’
 
 ATTRIBUTES:
 
