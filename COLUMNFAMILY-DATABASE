@@ -1,0 +1,40 @@
+HBASE:
+
+HBase is an open-source non-relational, scalable, distributed database written in Java. 
+It provides random real-time read and write access to the given data.
+It is possible to write NoSQL queries to get the results using APIs.
+HBase is most effectively used to store non-relational data, accessed via the HBase API.
+Apache Phoenix is commonly used as a SQL layer on top of HBase allowing you to use familiar SQL syntax to insert, delete, and query data stored in HBase.
+
+CREATE TABLE:
+        To create a table,the following syntax is used:
+
+                     create ‘<table name>’,’<column family>’ 
+                    
+UPDATE TABLE:
+       To update a data in a table,the following syntax is used:
+
+                     put ‘table name’,’row ’,'Column family:column name',’new value’
+                     
+INSERT TABLE:  
+        To insert a data in a table,the following syntax is used:
+
+               
+                     put ‘<table name>’,’row1’,’<columnfamily:colname>’,’<value>’
+                     
+DELETE DATA:
+        To delete a particular data in a table,the following syntax is used: 
+
+                     delete ‘<table name>’, ‘<row>’, ‘<column name >’, ‘<time stamp>’
+
+ATTRIBUTES:
+
+
+ For TOURISM MANAGEMENT,it contains two tables named,
+      *passenger_name
+      *paasenger_place
+
+
+CONCLUSION:
+      It can be said that HBase has proved to be a powerful tool over existing Hadoop environments. 
+HBase is a popular NoSQL database with high throughput and low latency. HBase garnered developer support from other companies and was adopted by companies for production deployment.
