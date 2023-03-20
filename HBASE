@@ -1,0 +1,72 @@
+/ # hbase shell
+
+2023-03-19 09:38:31,698 WARN  [main] util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+HBase Shell; enter 'help<RETURN>' for list of supported commands.
+Type "exit<RETURN>" to leave the HBase Shell
+Version 1.3.2, r1bedb5bfbb5a99067e7bc54718c3124f632b6e17, Mon Mar 19 18:47:19 UTC 2018
+
+hbase(main):001:0> create'tourism','passenger name','passenger place'
+0 row(s) in 1.5550 seconds
+hbase(main):002:0> scan'tourism'
+=> Hbase::Table – tourism
+
+hbase(main):003:0> put'tourism','01','passenger name:manju','passenger place:ooty'
+0 row(s) in 0.1220 seconds
+
+hbase(main):004:0> put'tourism','02','passenger name:nivi','passenger place:kerala'
+0 row(s) in 0.0160 seconds
+
+hbase(main):005:0> put'tourism','03','passenger name:merrlin','passenger place:cochin'
+0 row(s) in 0.0030 seconds
+
+hbase(main):006:0> put'tourism','04','passenger name:priya','passenger place:kodaikanaln'
+0 row(s) in 0.0060 seconds
+
+hbase(main):007:0> scan'tourism'
+
+ROW                                       COLUMN+CELL  
+                                                                                                         
+ 01                                       column=passenger name:manju, timestamp=1679218912493, value=passenger place:ooty                                      
+ 02                                       column=passenger name:merrlin, timestamp=1679219010806, value=passenger place:cochin                                  
+ 03                                       column=passenger name:nivi, timestamp=1679218977344, value=passenger place:kerala                                     
+ 04                                       column=passenger name:priya, timestamp=1679219042870, value=passenger place:kodaikanaln                               
+4 row(s) in 0.0400 seconds
+
+hbase(main):001:0> put'tourism','05','passenger name:sri','passenger place:goa'
+0 row(s) in 0.2730 seconds
+
+hbase(main):002:0> scan'tourism'
+
+ROW                                       COLUMN+CELL 
+                                                                                                          
+ 01                                       column=passenger name:manju, timestamp=1679218912493, value=passenger place:ooty                                      
+ 02                                       column=passenger name:merrlin, timestamp=1679219010806, value=passenger place:cochin                                  
+ 03                                       column=passenger name:nivi, timestamp=1679218977344, value=passenger place:kerala                                     
+ 04                                      column=passenger name:priya, timestamp=1679219042870, value=passenger place:kodaikanaln                               
+ 05                                      column=passenger name:sri, timestamp=1679220222506, value=passenger place:goa 
+                                        
+5 row(s) in 0.0500 seconds
+
+hbase(main):003:0> delete'tourism','03','passenger name', 'passenger place'
+
+0 row(s) in 0.0710 seconds
+
+hbase(main):004:0> scan'tourism'
+
+ROW                                       COLUMN+CELL 
+                                                                                                          
+ 01                                       column=passenger name:manju, timestamp=1679218912493, value=passenger place:ooty                                      
+ 02                                       column=passenger name:merrlin, timestamp=1679219010806, value=passenger place:cochin                                  
+ 04                                       column=passenger name:priya, timestamp=1679219042870, value=passenger place:kodaikanaln                               
+ 05                                       column=passenger name:sri,
+timestamp=1679220222506, value=passenger place:goa 
+
+4 row(s) in 0.0230 seconds
+
+hbase(main):007:0> get'tourism','05','passenger name','passenger place'
+
+COLUMN                                    CELL    
+                                                                                                              
+ passenger name:sri                       timestamp=1679220222506, value=passenger place:goa 
+                                                                   
+1 row(s) in 0.0290 seconds
